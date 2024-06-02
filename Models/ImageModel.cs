@@ -2,6 +2,7 @@
 {
     public class ImageModel
     {
+        // Saves the image to the images folder and returns the file name
         public string SaveImage(IFormFile image)
         {
             var fileName = Path.GetFileName(image.FileName);
@@ -15,7 +16,7 @@
 
             if (System.IO.File.Exists(filePath))
             {
-                var uniqueIdentifier = DateTime.Now.Ticks;
+                var uniqueIdentifier = Guid.NewGuid().ToString();
                 fileName = Path.GetFileNameWithoutExtension(fileName) + "_" + uniqueIdentifier + Path.GetExtension(fileName);
                 filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);
             }
@@ -28,6 +29,7 @@
             return fileName;
         }
 
+        // Deletes the image with the given file name from the images folder
         public void DeleteImage(string fileName)
         {
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/images", fileName);

@@ -23,6 +23,8 @@ namespace pots.Models
             _imageModel = new ImageModel();
         }
 
+
+        // Returns a list of all pots in the database
         public List<PotModel> GetPots()
         {
             var pots = new List<PotModel>();
@@ -33,7 +35,6 @@ namespace pots.Models
                 {
                     connection.Open();
 
-                    // Execute a sample query
                     using (var command = new FbCommand("SELECT ID, NAME, DIAMETER, VOLUME, IMAGE FROM POT", connection))
                     {
                         using (var reader = command.ExecuteReader())
@@ -63,6 +64,8 @@ namespace pots.Models
             return pots;
         }
 
+
+        // Adds a new pot to the database. If an image is provided, it is saved and its path is stored in the IMAGE property of the pot
         public void AddPot(PotModel newPot, IFormFile image)
         {
             if (image != null && image.Length > 0)
@@ -89,6 +92,7 @@ namespace pots.Models
         }
 
 
+        // Returns a PotModel object representing the pot with the given ID from the database
         public PotModel GetPot(int id)
         {
             PotModel pot = null;
@@ -124,6 +128,7 @@ namespace pots.Models
         }
 
 
+        // Updates the details of a pot in the database. If an image is provided, it is saved and its path is stored in the IMAGE property of the pot
         public void UpdatePot(PotModel pot, IFormFile image)
         {
             if (image != null && image.Length > 0)
@@ -163,8 +168,7 @@ namespace pots.Models
         }
 
 
-
-
+        // Deletes the pot with the given ID from the database. If the pot has an image, the image is also deleted
         public void DeletePot(int id)
         {
             PotModel pot = GetPot(id);
@@ -188,7 +192,5 @@ namespace pots.Models
                 }
             }
         }
-
-
     }
 }

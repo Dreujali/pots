@@ -20,6 +20,8 @@ namespace pots.Models
             connectionString = _configuration["ConnectionStrings:DefaultConnection"];
         }
 
+
+        // Returns a list of all lids in the database
         public List<LidModel> GetLids()
         {
             var lids = new List<LidModel>();
@@ -30,7 +32,6 @@ namespace pots.Models
                 {
                     connection.Open();
 
-                    // Execute a sample query
                     using (var command = new FbCommand("SELECT ID, NAME, DIAMETER, IMAGE FROM LID", connection))
                     {
                         using (var reader = command.ExecuteReader())
@@ -59,6 +60,8 @@ namespace pots.Models
             return lids;
         }
 
+
+        // Adds a new lid to the database
         public void AddLid(LidModel newLid)
         {
             using (var connection = new FbConnection(connectionString))
@@ -77,6 +80,8 @@ namespace pots.Models
             }
         }
 
+
+        // Returns a LidModel object representing the lid with the given ID from the database
         public LidModel GetLid(int id)
         {
             LidModel lid = null;
@@ -110,6 +115,8 @@ namespace pots.Models
             return lid;
         }
 
+
+        // Updates the details of a lid in the database
         public void UpdateLid(LidModel lid)
         {
             using (var connection = new FbConnection(connectionString))
@@ -129,6 +136,8 @@ namespace pots.Models
             }
         }
 
+
+        // Deletes the lid with the given ID from the database
         public void DeleteLid(int id)
         {
             using (var connection = new FbConnection(connectionString))
@@ -146,6 +155,7 @@ namespace pots.Models
             }
         }
 
+        // Returns a list of lids that with a given diameter
         public List<LidModel> GetCompatibleLids(float diameter)
         {
             var lids = new List<LidModel>();
@@ -156,7 +166,6 @@ namespace pots.Models
                 {
                     connection.Open();
 
-                    // Execute a sample query
                     using (var command = new FbCommand("SELECT ID, NAME, DIAMETER, IMAGE FROM LID WHERE DIAMETER = @diameter", connection))
                     {
                         command.Parameters.AddWithValue("@diameter", diameter);
@@ -186,7 +195,5 @@ namespace pots.Models
 
             return lids;
         }
-
-
     }
 }
