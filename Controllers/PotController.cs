@@ -72,7 +72,6 @@ namespace pots.Controllers
             LidModel lidModel = new LidModel(_configuration);
             List<LidModel> compatibleLids = lidModel.GetCompatibleLids(pot.DIAMETER);
 
-            // Create a ViewModel to hold the pot and the compatible lids
             PotDetailsViewModel viewModel = new PotDetailsViewModel
             {
                 Pot = pot,

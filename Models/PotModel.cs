@@ -174,7 +174,6 @@ namespace pots.Models
         {
             PotModel pot = GetPot(id);
 
-            // Delete the image file
             if (!string.IsNullOrEmpty(pot.IMAGE))
             {
                 _imageModel.DeleteImage(pot.IMAGE);

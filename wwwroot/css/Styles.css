@@ -81,14 +81,14 @@ footer {
 }
 
 .btn {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; 
     border: none;
     color: white;
-    padding: 10px 20px; /* Adjust the padding to make the buttons smaller */
+    padding: 10px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 14px; /* Adjust the font size to make the buttons smaller */
+    font-size: 14px;
     margin: 4px 2px;
     cursor: pointer;
 }
@@ -96,11 +96,10 @@ footer {
 .btn-primary {
     background-color: #008CBA;
 }
-/* Blue */
+
 .btn-danger {
     background-color: #f44336;
 }
-/* Red */
 
 .pot-container {
     display: flex;
