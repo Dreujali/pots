@@ -1,0 +1,35 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model List<pots.Models.PotModel>
+
+<h2>Pots</h2>
+
+<!-- Add a "Create New Pot" button at the top of the page -->
+<a asp-action="Create" asp-controller="Pot" class="btn btn-primary">Create New Pot</a>
+
+<div class="pot-container">
+    @foreach (var pot in Model)
+    {
+        <div class="pot-item">
+            <h3>@pot.NAME</h3>
+            @if (!string.IsNullOrEmpty(pot.IMAGE))
+            {
+                <img src="~/images/@pot.IMAGE" alt="@pot.NAME" style="max-width:200px;height:100px;">
+            }
+            else
+            {
+                <img src="~/images/placeholder.png" alt="Placeholder image" style="max-width:200px;height:100px;">
+            }
+
+            <p>Diameter: @pot.DIAMETER cm</p>
+            <p>Volume: @pot.VOLUME l</p>
+            <div class="pot-actions">
+                <a asp-action="Details" asp-route-id="@pot.ID" class="btn btn-primary">Details</a>
+                <a asp-action="Edit" asp-route-id="@pot.ID" class="btn btn-primary">Edit</a>
+                <a asp-action="Delete" asp-route-id="@pot.ID" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,20 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model pots.Models.LidModel
+
+<h2>Edit Lid</h2>
+
+<form asp-action="Edit" asp-controller="Lid">
+    <input type="hidden" asp-for="ID" />
+    <div class="form-group">
+        <label for="NAME">Name</label>
+        <input asp-for="NAME" class="form-control" id="NAME" />
+    </div>
+    <div class="form-group">
+        <label for="DIAMETER">Diameter</label>
+        <input asp-for="DIAMETER" class="form-control" id="DIAMETER" /> cm
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+
+@model List<pots.Models.LidModel>
+
+<h2>Lids</h2>
+<a asp-action="Create" asp-controller="Lid" class="btn btn-primary">Create New Lid</a>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Diameter</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lid in Model)
+        {
+            <tr>
+                <td>@lid.NAME</td>
+                <td>@lid.DIAMETER cm</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@lid.ID" class="btn btn-primary">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@lid.ID" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

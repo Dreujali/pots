@@ -1,0 +1,30 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model pots.Models.PotDetailsViewModel
+
+<h2>@Model.Pot.NAME</h2>
+<p>Diameter: @Model.Pot.DIAMETER cm</p>
+<p>Volume: @Model.Pot.VOLUME l</p>
+
+@if (!string.IsNullOrEmpty(Model.Pot.IMAGE))
+{
+    <img src="~/images/@Model.Pot.IMAGE" alt="@Model.Pot.NAME" style="max-height:100px; max-width:100%;" />
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Compatible Lids</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var lid in Model.CompatibleLids)
+        {
+            <tr>
+                <td>@lid.NAME</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,28 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model pots.Models.PotModel
+
+<h2>Edit Pot</h2>
+
+<form asp-action="Edit" asp-controller="Pot" enctype="multipart/form-data">
+    <input type="hidden" asp-for="ID" />
+    <div class="form-group">
+        <label>Name</label>
+        <input asp-for="NAME" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Diameter</label>
+        <input asp-for="DIAMETER" class="form-control" /> cm
+    </div>
+    <div class="form-group">
+        <label>Volume</label>
+        <input asp-for="VOLUME" class="form-control" /> l
+    </div>
+    <div class="form-group">
+        <label>Image</label>
+        <input type="file" class="form-control" id="image" name="IMAGE"> 
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

@@ -1,0 +1,27 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model pots.Models.PotModel
+
+<h2>Add a New Pot</h2>
+
+<form asp-action="Create" asp-controller="Pot" enctype="multipart/form-data">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="NAME" required>
+    </div>
+    <div class="form-group">
+        <label for="diameter">Diameter</label>
+        <input type="number" step="0.01" class="form-control" id="diameter" name="DIAMETER" required> cm
+    </div>
+    <div class="form-group">
+        <label for="volume">Volume</label>
+        <input type="number" step="0.01" class="form-control" id="volume" name="VOLUME" required> l
+    </div>
+    <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" class="form-control" id="image" name="IMAGE">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,123 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: start;
+}
+
+    .navbar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+
+        .navbar ul li {
+            margin-right: 20px;
+        }
+
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.body-content {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table th, .table td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .table tr:hover {
+        background-color: #ddd;
+    }
+
+    .table th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px; /* Adjust the padding to make the buttons smaller */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px; /* Adjust the font size to make the buttons smaller */
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #008CBA;
+}
+/* Blue */
+.btn-danger {
+    background-color: #f44336;
+}
+/* Red */
+
+.pot-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pot-item {
+    flex: 0 0 calc(33.33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.pot-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
