@@ -1,8 +1,5 @@
-﻿using pots.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using FirebirdSql.Data.FirebirdClient;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Mvc;
+using pots.Models;
 
 namespace pots.Controllers
 {

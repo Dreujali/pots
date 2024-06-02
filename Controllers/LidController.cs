@@ -1,6 +1,5 @@
-﻿using pots.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
+using pots.Models;
 
 namespace pots.Controllers
 {

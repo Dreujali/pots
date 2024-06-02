@@ -1,9 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using FirebirdSql.EntityFrameworkCore.Firebird;
-using FirebirdSql.Data.FirebirdClient;
-using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
+﻿using FirebirdSql.Data.FirebirdClient;
 
 namespace pots.Models
 {
